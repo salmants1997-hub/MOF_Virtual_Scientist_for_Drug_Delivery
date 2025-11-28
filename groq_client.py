@@ -1,10 +1,12 @@
 import os
 import requests
+import streamlit as st
+from groq import Groq
 from PyPDF2 import PdfReader
-from dotenv import load_dotenv
 
-load_dotenv()
-GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+
+
+GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
 GROQ_MODEL = "llama-3.3-70b-versatile"
 
